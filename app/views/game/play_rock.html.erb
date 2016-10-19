@@ -1,0 +1,14 @@
+<h1> Howdy!</h1>
+
+<p> You played rock. </p>
+
+<img src="hiit://localhost:4000/assets/images/rock.png"
+width="200">
+
+<p> The computer played <%= @computer_move%> </p>
+
+<% if @computer_move == "rock" %>
+
+<h3> You tied! </h3>
+
+<% end %>
