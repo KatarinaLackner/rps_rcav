@@ -8,7 +8,9 @@ width="200">
 <p> The computer played <%= @computer_move%> </p>
 
 <% if @computer_move == "rock" %>
-
 <h3> You tied! </h3>
-
+<% elsif @computer_move == "scissors" %>
+<h3> You  Win! </h3>
+<% else %>
+<h3>You Lose!</h3>
 <% end %>
