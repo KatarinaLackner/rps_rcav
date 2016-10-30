@@ -5,7 +5,9 @@ get("/rock", {:controller => "game", :action => "user_plays_rock"})
 get("/paper", {:controller => "game", :action => "user_plays_paper"})
 
 get("/scissors", {:controller => "game", :action => "user_plays_scissors"})
- 
+
+get("/flexible/:move", {:controller => "game", :action => "user_plays_rock"})
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

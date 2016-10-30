@@ -1,26 +1,45 @@
 class GameController < ApplicationController
   def user_plays_rock
 
-    moves = ["rock", "paper", "scissors"]
+    @computer_move = ["rock", "paper", "scissors"].sample
 
-    @computer_move = moves.sample
+    @user_move = "rock"
 
+    if @computer_move == "rock"
+    @outcome = "tied"
+  elsif @computer_move == "paper"
+    @outcome = "lost"
+  elsif @computer_move == "scissors"
+    @outcome = "won"
+  end
     render("game/play_rock.html.erb")
   end
 
   def user_plays_paper
-    moves = ["rock", "paper", "scissors"]
+    @computer_move = ["rock", "paper", "scissors"].sample
 
-    @computer_move = moves.sample
-
+    @user_move = "paper"
+    if @computer_move == "rock"
+          @outcome = "won"
+        elsif @computer_move == "paper"
+          @outcome = "tied"
+        elsif @computer_move == "scissors"
+          @outcome = "lost"
+        end
     render("game/play_paper.html.erb")
   end
 
   def user_plays_scissors
-    moves = ["rock", "paper", "scissors"]
 
-    @computer_move = moves.sample
-
+    @computer_move = ["rock", "paper", "scissors"].sample
+    @user_move = "scissors"
+    if @computer_move == "rock"
+        @outcome = "lost"
+      elsif @computer_move == "paper"
+        @outcome = "won"
+      elsif @computer_move == "scissors"
+        @outcome = "tied"
+      end
     render("game/play_scissors.html.erb")
   end
 end
